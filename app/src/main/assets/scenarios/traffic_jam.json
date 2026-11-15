@@ -1,0 +1,14 @@
+{
+  "name": "시동 인사 30초 → 정체 4분 → 부드럽게 10분 (답답 → 뿌듯 표정 확인용, --ei speed 10 이면 약 1분 30초)",
+  "keyframes": [
+    { "atSec": 0, "gear": "PARK", "speedKmh": 0 },
+    { "atSec": 30, "gear": "DRIVE", "speedKmh": 0 },
+    { "atSec": 40, "speedKmh": 15 },
+    { "atSec": 260, "speedKmh": 15 },
+    { "atSec": 275, "speedKmh": 50 },
+    { "atSec": 880, "speedKmh": 50 },
+    { "atSec": 900, "speedKmh": 0 },
+    { "atSec": 905, "gear": "PARK" },
+    { "atSec": 930 }
+  ]
+}

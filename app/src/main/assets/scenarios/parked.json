@@ -1,0 +1,7 @@
+{
+  "name": "정차만 계속 (내 차 꾸미기 확인용)",
+  "keyframes": [
+    { "atSec": 0, "gear": "PARK", "speedKmh": 0 },
+    { "atSec": 3600 }
+  ]
+}

@@ -1,0 +1,23 @@
+# Gradle / Android Studio
+.gradle/
+build/
+.idea/
+*.iml
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 비밀 정보 (API 키 등은 여기서 읽는다)
+local.properties
+.env
+
+# 서명 키 (절대 커밋 금지)
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+
+# Blender 스크립트 실행 때 생기는 파이썬 캐시
+__pycache__/

@@ -1,0 +1,23 @@
+{
+  "name": "출근길 30분 (급정거 3회)",
+  "keyframes": [
+    { "atSec": 0, "gear": "PARK", "speedKmh": 0 },
+    { "atSec": 10, "gear": "DRIVE", "speedKmh": 0 },
+    { "atSec": 30, "speedKmh": 40 },
+    { "atSec": 240, "speedKmh": 50 },
+    { "atSec": 242, "speedKmh": 10 },
+    { "atSec": 260, "speedKmh": 45 },
+    { "atSec": 600, "speedKmh": 60 },
+    { "atSec": 900, "speedKmh": 60 },
+    { "atSec": 902, "speedKmh": 15 },
+    { "atSec": 930, "speedKmh": 50 },
+    { "atSec": 1300, "speedKmh": 40 },
+    { "atSec": 1302, "speedKmh": 0 },
+    { "atSec": 1340, "speedKmh": 0 },
+    { "atSec": 1360, "speedKmh": 35 },
+    { "atSec": 1760, "speedKmh": 20 },
+    { "atSec": 1780, "speedKmh": 0 },
+    { "atSec": 1790, "gear": "PARK" },
+    { "atSec": 1800 }
+  ]
+}

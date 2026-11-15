@@ -1,0 +1,24 @@
+{
+  "name": "데모 영상용 한 바퀴 (출발 → 급정거 3회 → 주차 리포트 → 공기압 경고 → 정차 → 건강검진 120초)",
+  "keyframes": [
+    { "atSec": 0, "gear": "PARK", "speedKmh": 0 },
+    { "atSec": 20, "gear": "DRIVE", "speedKmh": 0 },
+    { "atSec": 32, "speedKmh": 40 },
+    { "atSec": 60, "speedKmh": 50 },
+    { "atSec": 62, "speedKmh": 10 },
+    { "atSec": 80, "speedKmh": 45 },
+    { "atSec": 120, "speedKmh": 55 },
+    { "atSec": 122, "speedKmh": 12 },
+    { "atSec": 140, "speedKmh": 50 },
+    { "atSec": 176, "speedKmh": 40 },
+    { "atSec": 178, "speedKmh": 0 },
+    { "atSec": 190, "gear": "PARK" },
+    { "atSec": 250, "gear": "DRIVE", "speedKmh": 0 },
+    { "atSec": 265, "speedKmh": 60 },
+    { "atSec": 300, "speedKmh": 60, "warnings": ["TPMS"] },
+    { "atSec": 330, "speedKmh": 0 },
+    { "atSec": 338, "gear": "PARK" },
+    { "atSec": 360, "warnings": [] },
+    { "atSec": 480 }
+  ]
+}

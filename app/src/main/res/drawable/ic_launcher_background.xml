@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 앱 아이콘 배경: 어두운 회색 그라데이션 (위 → 아래). Pleos 기본 앱 아이콘과 같은 검정 계열. 전경 그림은 docs/character/icon.js -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:endColor="#0E0F11"
+        android:startColor="#2B2E33" />
+</shape>

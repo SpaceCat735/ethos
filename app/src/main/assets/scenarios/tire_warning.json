@@ -1,0 +1,13 @@
+{
+  "name": "주행 중 타이어 공기압 경고",
+  "keyframes": [
+    { "atSec": 0, "gear": "PARK", "speedKmh": 0 },
+    { "atSec": 10, "gear": "DRIVE", "speedKmh": 0 },
+    { "atSec": 40, "speedKmh": 60 },
+    { "atSec": 200, "speedKmh": 60, "warnings": ["TPMS"] },
+    { "atSec": 260, "speedKmh": 0 },
+    { "atSec": 270, "gear": "PARK" },
+    { "atSec": 400, "warnings": [] },
+    { "atSec": 420 }
+  ]
+}

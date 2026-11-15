@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 주행 기록 알림용 작은 아이콘: 에토스 몸통 실루엣 (단색) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M7,3h10a3,3 0,0 1,3 3v9a2,2 0,0 1,-2 2H6a2,2 0,0 1,-2 -2V6a3,3 0,0 1,3 -3zM7,6v5h10V6zM6.5,17.5a2.5,2.5 0,1 0,5 0zM12.5,17.5a2.5,2.5 0,1 0,5 0z" />
+</vector>

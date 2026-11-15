@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 플레오스 커넥트(AAOS) 전용 앱 -->
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="true" />
+
+    <!-- 내비가 화면을 쓰는 동안에도 주행 기록을 이어 가기 위한 포그라운드 서비스 (2026-11-02 팀 승인).
+         Vehicle SDK 퍼미션이 아닌 안드로이드 기본 퍼미션. 알림 퍼미션(POST_NOTIFICATIONS)은 일부러 넣지 않는다.
+         그래서 Android 13 이상에서는 서비스 알림이 알림 센터에 보이지 않는다 (기록은 정상). -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <!-- 실제 차량 연결(실행 옵션 source=pleos)용 (2026-11-03 승인). PRIVATE_* 퍼미션은 선언하지 않는다.
+         CAR_DRIVE: Vehicle SDK 기어·누적 주행거리 (SDK @RequiresPermission 기준). 신청 없이 쓰는 Vehicle State SDK의 공개 퍼미션 -->
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+
+    <!-- 차속 퍼미션(AAOS PERF_VEHICLE_SPEED)은 1차 제출본에서 뺐다 (2026-11-12 팀 결정).
+         Pleos 문서에서 이 퍼미션이 승인 범위인지 확인하지 못했고, 승인 안 된 퍼미션 선언은 앱 심사 탈락 사유라서다.
+         승인을 받으면 아래 한 줄의 주석만 풀면 된다. 코드는 그대로 두었고, 선언이 있으면 실차 모드에서 실행 중에 묻고 차속을 읽는다.
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    -->
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Naechamon">
+
+        <!-- AAOS 차속·주행 제한 API(android.car). 없는 기기에서도 설치·실행되게 필수로 하지 않는다 -->
+        <uses-library
+            android:name="android.car"
+            android:required="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!-- 가로 고정 안 함: 내비 옆 반쪽(세로) 창에서도 같은 기능을 보여 준다 (Pleos Display Layout 가이드) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 운전 중에도 표정 변화를 보여주기 위해 주의 분산 최적화 화면으로 등록 (기획안 7-4).
+                 운전 중 조작 UI는 띄우지 않는다는 안전 규칙을 반드시 지킬 것. -->
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
+
+        <!-- 주행 기록 서비스. 다른 앱이 부를 일이 없으므로 외부에 노출하지 않는다 -->
+        <service
+            android:name=".DrivingRecordService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Records the current trip (distance, hard braking, trip length) from vehicle data while another app such as navigation is on screen, to calculate maintenance intervals." />
+        </service>
+    </application>
+
+</manifest>
